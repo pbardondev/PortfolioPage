@@ -138,3 +138,54 @@
         margin-right: 0;
     }
 }
+
+#project1 {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  top: 55%;
+  left: 10%;
+  z-index: 10000;
+}
+
+#project1 img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+#project2 {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  left: 30%;
+  top: 55%;
+  z-index: 10000;
+}
+
+#project2 img {
+  max-width: 100%;
+}
+
+#project3 {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  top: 55%;
+  left: 50%;
+  z-index: 10000;
+}
+
+
+#project4 {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  top: 0;
+  left: 70%;
+  z-index: 10000;
+}
+
+#spacer {
+  min-height: 500px;
+}
