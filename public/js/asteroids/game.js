@@ -8,7 +8,7 @@
     this.ship = new Asteroids.Ship([(Game.DIM_X)/2, (Game.DIM_Y)/2], [0, 0],                                                                          this);
     this.bullets = [];
     this.img = new Image();
-    this.img.src = 'images/sky2.png';
+    this.img.src = 'sky2.png';
 
   };
 
@@ -47,6 +47,47 @@
     this.ship.thrusting = false;
   };
 
+  var stopAnim = function() {
+    debugger;
+    clearInterval(renderInter);
+  };
+
+
+  Game.prototype.renderGameWin = function() {
+    var game = this;
+    var i = 0;
+    renderInter = setInterval(function() {
+      game.canvas.font= (i+20) + "px Verdana";
+      game.canvas.clearRect(0,0, Game.DIM_X, Game.DIM_Y)
+      game.canvas.fillText("You Win!", 50+i, 50+i);
+      i++;
+      if (i  > 300) {
+        stopAnim();
+      }
+
+
+    }, Game.FPS);
+  };
+
+  Game.prototype.renderGameLose = function() {
+    var game = this;
+
+    game.canvas.fillStyle = "#42FF00";
+
+    var i = 0;
+    renderInter = setInterval(function() {
+      game.canvas.font= (i+20) + "px Verdana";
+      game.canvas.clearRect(0,0, Game.DIM_X, Game.DIM_Y)
+      game.canvas.fillText("You Lose!", 25+(i*1.5), 25+(i*1.5));
+      i++;
+      if (i  > 150) {
+        stopAnim();
+      }
+
+    }, Game.FPS);
+
+  };
+
   Game.prototype.move = function() {
     this.ship.move();
 
@@ -68,11 +109,11 @@
       if (game.isOutOfBounds(b)) {
         game.removeBullet(b);
       }
-    })
-    game.checkShipCollisions();
+    });
     game.draw();
+    game.checkShipCollisions();
     if (game.checkWin()) {
-      alert("You Win!")
+      game.renderGameWin();
       game.stop();
     }
   };
@@ -81,8 +122,8 @@
     var game = this;
     game.asteroids.forEach(function(ast) {
       if (game.ship.isCollidedWith(ast)) {
+        game.renderGameLose();
         game.stop();
-        alert("Game Over!");
       }
     });
   };

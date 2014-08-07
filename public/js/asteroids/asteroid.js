@@ -19,21 +19,22 @@ Function.prototype.inherits = function(object) {
     Asteroids.MovingObject.call(this, pos, vel, rad, Asteroid.COLOR)
     if(rad > 70) {
       this.img = new Image();
-      this.img.src = 'images/asteroid1.png';
+      this.img.src = 'asteroid1.png';
     }else if (this.rad > 40){
       this.img = new Image();
-      this.img.src = 'images/asteroid2.png';
+      this.img.src = 'asteroid2.png';
     }else if (this.rad > 30){
       this.img = new Image();
-      this.img.src = 'images/asteroid3.png';
+      this.img.src = 'asteroid3.png';
     }else if (this.rad > 20){
       this.img = new Image();
-      this.img.src = 'images/asteroid4.png';
+      this.img.src = 'asteroid4.png';
     }
   };
 
   Asteroid.COLOR = "red";
   Asteroid.RADIUS =  75;
+  Asteroid.GROUPER = true;
 
   Asteroid.inherits(Asteroids.MovingObject);
 
@@ -60,8 +61,15 @@ Function.prototype.inherits = function(object) {
   };
 
   Asteroid.randomAsteroid = function(dimX, dimY) {
-    var rPos = [(dimX * Math.random()), (dimY * Math.random())];
+    if (Asteroid.GROUPER){
+      var rPos = [(dimX/8 * Math.random()), (dimY/8 * Math.random())];
+    } else {
+      var rPos = [((dimX/8 * Math.random())+ (3*(dimX/4))), ((dimY/8 * Math.random())+ (3*(dimX/4)))];
+    }
+    Asteroid.GROUPER = false
+    var rPos = [(dimX/2 * Math.random()), (dimY/2 * Math.random())];
     var rVel = [((Math.random() * 2) - 1), ((Math.random() * 2) - 1)];
+
     return new Asteroid(rPos, rVel, Asteroid.RADIUS);
   };
 
