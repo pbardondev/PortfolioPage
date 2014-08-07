@@ -8,7 +8,7 @@
     this.ship = new Asteroids.Ship([(Game.DIM_X)/2, (Game.DIM_Y)/2], [0, 0],                                                                          this);
     this.bullets = [];
     this.img = new Image();
-    this.img.src = 'sky2.png';
+    this.img.src = 'images/sky2.png';
 
   };
 

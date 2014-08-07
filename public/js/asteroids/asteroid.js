@@ -19,16 +19,16 @@ Function.prototype.inherits = function(object) {
     Asteroids.MovingObject.call(this, pos, vel, rad, Asteroid.COLOR)
     if(rad > 70) {
       this.img = new Image();
-      this.img.src = 'asteroid1.png';
+      this.img.src = 'images/asteroid1.png';
     }else if (this.rad > 40){
       this.img = new Image();
-      this.img.src = 'asteroid2.png';
+      this.img.src = 'images/asteroid2.png';
     }else if (this.rad > 30){
       this.img = new Image();
-      this.img.src = 'asteroid3.png';
+      this.img.src = 'images/asteroid3.png';
     }else if (this.rad > 20){
       this.img = new Image();
-      this.img.src = 'asteroid4.png';
+      this.img.src = 'images/asteroid4.png';
     }
   };
 
