@@ -54,13 +54,14 @@
 
   Game.prototype.renderGameWin = function() {
     var game = this;
+    game.canvas.fillStyle = "#42FF00";
     var i = 0;
     renderInter = setInterval(function() {
       game.canvas.font= (i+20) + "px Courier New";
       game.canvas.clearRect(0,0, Game.DIM_X, Game.DIM_Y)
-      game.canvas.fillText("You Win!", 50+i, 50+i);
+      game.canvas.fillText("You Win!", 50+(i*1.5), 50+(i*1.5));
       i++;
-      if (i  > 300) {
+      if (i  > 150) {
         stopAnim();
       }
 
@@ -70,9 +71,7 @@
 
   Game.prototype.renderGameLose = function() {
     var game = this;
-
     game.canvas.fillStyle = "#42FF00";
-
     var i = 0;
     renderInter = setInterval(function() {
       game.canvas.font= (i+20) + "px Courier New";
