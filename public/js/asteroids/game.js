@@ -8,7 +8,7 @@
     this.ship = new Asteroids.Ship([(Game.DIM_X)/2, (Game.DIM_Y)/2], [0, 0],                                                                          this);
     this.bullets = [];
     this.img = new Image();
-    this.img.src = 'images/sky2.png';
+    this.img.src = 'sky2.png';
 
   };
 
@@ -48,7 +48,6 @@
   };
 
   var stopAnim = function() {
-    debugger;
     clearInterval(renderInter);
   };
 
@@ -57,7 +56,7 @@
     var game = this;
     var i = 0;
     renderInter = setInterval(function() {
-      game.canvas.font= (i+20) + "px Verdana";
+      game.canvas.font= (i+20) + "px Courier New";
       game.canvas.clearRect(0,0, Game.DIM_X, Game.DIM_Y)
       game.canvas.fillText("You Win!", 50+i, 50+i);
       i++;
@@ -76,7 +75,7 @@
 
     var i = 0;
     renderInter = setInterval(function() {
-      game.canvas.font= (i+20) + "px Verdana";
+      game.canvas.font= (i+20) + "px Courier New";
       game.canvas.clearRect(0,0, Game.DIM_X, Game.DIM_Y)
       game.canvas.fillText("You Lose!", 25+(i*1.5), 25+(i*1.5));
       i++;
