@@ -54,14 +54,13 @@
 
   Game.prototype.renderGameWin = function() {
     var game = this;
-    game.canvas.fillStyle = "#42FF00";
     var i = 0;
     renderInter = setInterval(function() {
-      game.canvas.font= (i+20) + "px Courier New";
+      game.canvas.font= (i+20) + "px Verdana";
       game.canvas.clearRect(0,0, Game.DIM_X, Game.DIM_Y)
-      game.canvas.fillText("You Win!", 50+(i*1.5), 50+(i*1.5));
+      game.canvas.fillText("You Win!", 50+i, 50+i);
       i++;
-      if (i  > 150) {
+      if (i  > 300) {
         stopAnim();
       }
 
@@ -71,12 +70,14 @@
 
   Game.prototype.renderGameLose = function() {
     var game = this;
+
     game.canvas.fillStyle = "#42FF00";
+
     var i = 0;
     renderInter = setInterval(function() {
-      game.canvas.font= (i+20) + "px Courier New";
+      game.canvas.font= (i+20) + "px Verdana";
       game.canvas.clearRect(0,0, Game.DIM_X, Game.DIM_Y)
-      game.canvas.fillText("You Lose!", 25+(i*1.5), 25+(i*1.5));
+      game.canvas.fillText("You Lose!",Game.DIM_X/2 - 275, Game.DIM_Y/2 - 50);
       i++;
       if (i  > 150) {
         stopAnim();
@@ -181,8 +182,25 @@
 
     if (key.isPressed('space')) {
       game.fireBullet();
-    };
-  }
+
+    }
+    return false;
+  };
+
+
+  window.onkeydown = function (event) {
+    if (event.keyCode === 32) {
+        event.preventDefault();
+    }
+  };
+
+  window.onload = function() {
+   document.getElementById("restart").addEventListener('click', function() {
+      window.location.reload();
+   }, false);
+  };
+
+
 
   var interID;
 
