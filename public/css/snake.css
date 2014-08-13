@@ -1,0 +1,43 @@
+body {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background-color: lightsteelblue;
+}
+
+#board {
+  margin: 0 auto;
+  width: 512px;
+  left: 25%;
+  right: 25%;
+  position: absolute;
+  border: thin solid black;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.square {
+  border-radius: 5px;
+  display: inline-block;
+  margin: 2px;
+  margin-bottom: 0;
+  margin-top: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.apple {
+  background-image: url("http://i.istockimg.com/file_thumbview_approve/17737693/3/stock-illustration-17737693-cartoon-apple.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+#restart {
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #888888;
+  border: thin solid white;
+  padding: 5px;
+  background-color: #00ffff;
+  font-size: 20px;
+}

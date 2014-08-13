@@ -11,4 +11,8 @@ class StaticPagesController < ApplicationController
     pdf_filename = File.join(Rails.root, "public/DevResume.pdf")
     send_file(pdf_filename, :filename => "DevResume.pdf", :disposition => 'inline', :type => "application/pdf")
   end
+
+  def snake
+    render 'snake'
+  end
 end

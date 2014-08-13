@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Snake!</title>
+    <link rel="stylesheet" href="css/snake.css" media="screen">
+    <script src="js/snake/underscore.js"></script>
+    <script src="js/snake/jquery.js"></script>
+    <script src="js/snake/snake.js"></script>
+    <script src="js/snake/board.js"></script>
+    <script src="js/snake/snake_ui.js"></script>
+  </head>
+  <body>
+    <h1>Snake!</h1>
+    <h4> Use W-A-S-D to change the direction of the snake.</h4>
+    <h4> Press 'P' to pause and 'G' to un-pause</h4>
+    <h3>Points:</h3>
+    <h3 id="points"></h3>
+    <h2><button id="restart">Restart</button></h2>
+    <div id="board"></div>
+
+
+   <script charset="utf-8">
+      $(function () {
+        var snakeGame = new S.SnakeUI($("#board"));
+        snakeGame.setUpBoard();
+      });
+    </script>
+  </body>
+</html>
