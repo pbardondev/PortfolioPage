@@ -34,10 +34,12 @@
   <script src="js/asteroids/bullet.js"></script>
 
   <script>
-    window.onload = function() {
+    var img = new Image();
+    img.src = 'images/sky2.png';
+    img.onload = function() {
       var canvas = document.getElementsByTagName("canvas")[0];
       var c = canvas.getContext('2d');
-      new Asteroids.Game(c).start();
+      new Asteroids.Game(c, img).start();
     }
   </script>
 

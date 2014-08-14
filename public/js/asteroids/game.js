@@ -1,14 +1,13 @@
 (function(root){
   var Asteroids = root.Asteroids = (root.Asteroids || {});
 
-  var Game = Asteroids.Game = function(ctx) {
+  var Game = Asteroids.Game = function(ctx, img) {
     this.canvas = ctx;
     this.asteroids = [];
     this.ship = new Asteroids.Ship([(Game.DIM_X)/2, (Game.DIM_Y)/2], [0, 0], this);
     this.addAsteroids(5);
     this.bullets = [];
-    this.img = new Image();
-    this.img.src = 'images/sky2.png';
+    this.img = img
     this.points = 0;
 
   };
@@ -208,12 +207,11 @@
   };
 
 
-  window.onload = function() {
-     document.getElementById("restart").addEventListener('click', function() {
-        window.location.reload();
-     }, false);
+  window.onkeydown = function (event) {
+    if (event.keyCode === 32) {
+        event.preventDefault();
+    }
   };
-
 
   window.onload = function() {
    document.getElementById("restart").addEventListener('click', function() {
