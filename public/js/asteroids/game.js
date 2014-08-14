@@ -208,11 +208,12 @@
   };
 
 
-  window.onkeydown = function (event) {
-    if (event.keyCode === 32) {
-        event.preventDefault();
-    }
+  window.onload = function() {
+     document.getElementById("restart").addEventListener('click', function() {
+        window.location.reload();
+     }, false);
   };
+
 
   window.onload = function() {
    document.getElementById("restart").addEventListener('click', function() {
