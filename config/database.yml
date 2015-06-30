@@ -12,10 +12,12 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: test-postgres_development
+  database: portfolio_database 
   pool: 5
-  username: appacademy
-  password:
+  username: portfolio 
+  password: portfolio
+  host: localhost
+  port: 5432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
