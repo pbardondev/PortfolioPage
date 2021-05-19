@@ -27,7 +27,7 @@ body {
 }
 
 .apple {
-  background-image: url("http://i.istockimg.com/file_thumbview_approve/17737693/3/stock-illustration-17737693-cartoon-apple.jpg");
+  background-image: url("https://s3-us-west-1.amazonaws.com/peter.bardon.portfolio.site/apple.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
